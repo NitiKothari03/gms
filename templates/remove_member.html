@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove Member</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Remove Member</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('view_members') }}">View Members</a></li>
+        <li><a href="{{ url_for('add_member') }}">Add Member</a></li>
+        <li><a href="{{ url_for('renew_membership') }}">Renew Membership</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <form method="POST">
+      <label for="id">Member ID:</label>
+      <input type="text" id="id" name="id" required><br><br>
+      
+      <input type="submit" value="Remove Member">
+    </form>
+  </main>
+</body>
+</html>

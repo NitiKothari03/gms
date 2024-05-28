@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Members</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>View Members</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('add_member') }}">Add Member</a></li>
+        <li><a href="{{ url_for('remove_member') }}">Remove Member</a></li>
+        <li><a href="{{ url_for('renew_membership') }}">Renew Membership</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <h2>Current Members:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Membership Type</th>
+          <th>Expiration Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for member in members %}
+        <tr>
+          <td>{{ member.id }}</td>
+          <td>{{ member.name }}</td>
+          <td>{{ member.membership_type }}</td>
+          <td>{{ member.expiration_date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

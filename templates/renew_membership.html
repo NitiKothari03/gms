@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Renew Membership</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Renew Membership</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('view_members') }}">View Members</a></li>
+        <li><a href="{{ url_for('add_member') }}">Add Member</a></li>
+        <li><a href="{{ url_for('remove_member') }}">Remove Member</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <form method="POST">
+      <label for="id">Member ID:</label>
+      <input type="text" id="id" name="id" required><br><br>
+      
+      <label for="expiration_date">New Expiration Date:</label>
+      <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+      
+      <input type="submit" value="Renew Membership">
+    </form>
+  </main>
+</body>
+</html>
